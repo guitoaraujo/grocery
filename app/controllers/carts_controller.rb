@@ -10,7 +10,7 @@ class CartsController < ApplicationController
       products.each do |product|
         CartProduct.create(cart: @cart, product: product)
       end
-      redirect_to cart_path(@cart)
+      redirect_to cart_path
     else
       render :index
     end
@@ -22,7 +22,7 @@ class CartsController < ApplicationController
   def delete_products
     @cart.cart_products.where(product_id: params[:products_to_delete]).delete_all
     @cart.update_total_price
-    redirect_to cart_path(@cart)
+    redirect_to cart_path
   end
 
   def update
@@ -31,7 +31,7 @@ class CartsController < ApplicationController
       CartProduct.find_or_create_by(cart: @cart, product: product)
     end
     @cart.update_total_price
-    redirect_to cart_path(@cart)
+    redirect_to cart_path
   end
 
   private
