@@ -1,0 +1,15 @@
+
+
+
+
+
+
+
+
+
+
+
+
+stripe:
+  secret: sk_test_51JvNnsAD3NTK3sN5z5pBgT5XPJRExEAknhCnIpoKvOqnXrCy6zlo8G5DFnDHApHIi70X6uPJacyLKOLLZFetfxNY00c2HobG6w
+  public: pk_test_51JvNnsAD3NTK3sN57f105luacB1GNaoTsBfbBVvUZ7UJiHlnIJ5tMKDTz2l9JxFXJamlvtP0ChxVX1O27q5p6wQS00pF2jkDcG
