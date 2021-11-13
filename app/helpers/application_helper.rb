@@ -11,4 +11,8 @@ module ApplicationHelper
   def categories_list(category)
     options_for_select(Category.all.map { |c| [c.name.capitalize, c.id] }, category)
   end
+
+  def formated_price(price)
+    price.to_f / 100
+  end
 end

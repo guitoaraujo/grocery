@@ -8,7 +8,7 @@ namespace :products do
         category = Category.find_or_create_by(name: product['category'])
         Product.create(
           title: product['title'],
-          price: product['price'],
+          price: (product['price'].to_f * 100).to_i,
           description: product['description'],
           category_id: category.id,
           image: product['image']

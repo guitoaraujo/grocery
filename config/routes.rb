@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get :cart, to: 'carts#show'
   delete :delete_products, to: 'carts#delete_products'
   patch :cart_update, to: 'carts#update'
+
+  post :checkout, to: 'checkout#create'
 end

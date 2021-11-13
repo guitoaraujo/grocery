@@ -6,10 +6,10 @@ class CartsController < ApplicationController
     products = Product.where(id: params[:products])
     @cart = Cart.new(user_id: current_user.id)
     if @cart.save
-      @cart.update_total_price
       products.each do |product|
         CartProduct.create(cart: @cart, product: product)
       end
+      @cart.update_total_price
       redirect_to cart_path
     else
       render :index
