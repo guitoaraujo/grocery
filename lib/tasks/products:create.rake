@@ -5,7 +5,14 @@ namespace :products do
     if response.response_code == 200
       products = JSON.parse(response.body)
       products.each do |product|
-        Product.create(product.except('id', 'rating'))
+        category = Category.find_or_create_by(name: product['category'])
+        Product.create(
+          title: product['title'],
+          price: product['price'],
+          description: product['description'],
+          category_id: category.id,
+          image: product['image']
+        )
       end
       puts 'OK!'
     else

@@ -1,7 +1,11 @@
-<div class="row mt-5">
-  <div class="col">
+<div class="row mt-5 mb-3">
+  <div class="col-4">
     <h1>Grocery</h1>
-    <h3>Products</h3>
+    <h3>Products (<%= @products.count %>)</h3>
+    <%= form_tag(products_path, method: :get) do %>
+      <%= select_tag :category, categories_list(@category), include_blank: 'All', class: 'form-select' %>     
+      <%= submit_tag 'Filter', class: 'btn btn-sm btn-primary mt-3' %>
+    <% end %>
   </div>
 </div>
 

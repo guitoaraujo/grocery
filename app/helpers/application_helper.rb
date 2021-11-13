@@ -7,4 +7,8 @@ module ApplicationHelper
   def cart_product?(cart, product)
     cart.products.include?(product)
   end
+
+  def categories_list(category)
+    options_for_select(Category.all.map { |c| [c.name.capitalize, c.id] }, category)
+  end
 end
