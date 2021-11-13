@@ -1,0 +1,51 @@
+<div class="row mt-5">
+  <div class="col">
+    <h1>Grocery</h1>
+    <h3>Cart</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <%= link_to 'Keep shopping', root_url, class: 'btn btn-success' %>
+  </div>
+</div>
+
+<%= form_tag(delete_products_path, method: :patch) do %>
+  <div class="row mt-5">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Price</th>
+            <th scope="col">Added on: </th>
+            <th scope="col">Remove?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cart.products.each do |product| %>
+            <tr>
+              <th><%= product.title %></th>
+              <td><%= product.price %></td>
+              <td><%= product_added_in(@cart, product) %></td>
+              <td><%= check_box_tag 'products_to_delete[]', product.id, false, class: 'form-check-input' %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <th>Total Price</th>
+            <td><%= @cart.total_price %></td>
+            <td></td>
+            <td><%= submit_tag 'Update Cart', class: 'btn btn-warning' %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="col">
+    <%= link_to 'Checkout', root_url, class: 'btn btn-success' %>
+  </div>
+</div>

@@ -1,4 +1,3 @@
-
 <div class="row mt-5">
   <div class="col">
     <h1>Grocery</h1>
@@ -6,18 +5,50 @@
   </div>
 </div>
 
-<div class="row mt-5">
-  <% @products.each do |product| %>
-    <div class="col-4">
-      <div class="card mb-3">
-        <img src="<%= product.image %>" class="card-img-top img-responsive" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= product.title %></h5>
-          <p class="card-text"><%= product.description %></p>
-          <p class="card-text"><small class="text-muted"><%= product.price %></small></p>
-          <a href="#" class="btn btn-primary">Add to Cart</a>
+<% if @cart %>
+  <%= form_tag(cart_update_path, method: :patch) do %>
+    <%= submit_tag 'Update Cart', class: 'btn btn-primary' %>
+    <div class="row mt-5">
+      <% @products.each do |product| %>
+        <div class="col-4">
+          <div class="card mb-3">
+            <img src="<%= product.image %>" class="card-img-top img-responsive" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= product.title %></h5>
+              <p class="card-text"><%= product.description %></p>
+              <p class="card-text"><small class="text-muted"><%= product.price %></small></p>
+              <label class="check-box">
+                <%= check_box_tag 'products[]', product.id, cart_product?(@cart, product), class: 'form-check-input' %>
+                Add to Cart
+              </label>
+            </div>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
+    <%= submit_tag 'Update Cart', class: 'btn btn-primary' %>
   <% end %>
-</div>
+<% else %>
+  <%= form_tag(carts_path) do %>
+    <%= submit_tag 'New Cart', class: 'btn btn-primary' %>
+    <div class="row mt-5">
+      <% @products.each do |product| %>
+        <div class="col-4">
+          <div class="card mb-3">
+            <img src="<%= product.image %>" class="card-img-top img-responsive" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= product.title %></h5>
+              <p class="card-text"><%= product.description %></p>
+              <p class="card-text"><small class="text-muted"><%= product.price %></small></p>
+              <label class="check-box">
+                <%= check_box_tag 'products[]', product.id, false, class: 'form-check-input' %>
+                Add to Cart
+              </label>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <%= submit_tag 'New Cart', class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
