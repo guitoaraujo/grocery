@@ -8,8 +8,8 @@ module ApplicationHelper
     cart.products.include?(product)
   end
 
-  def categories_list(category)
-    options_for_select(Category.all.map { |c| [c.name.capitalize, c.id] }, category)
+  def categories_list(category_id)
+    options_for_select(Category.all.map { |c| [c.name.capitalize, c.id] }, category_id)
   end
 
   def formated_price(price)

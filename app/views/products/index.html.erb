@@ -3,7 +3,7 @@
     <h1>Grocery</h1>
     <h3>Products (<%= @products.count %>)</h3>
     <%= form_tag(products_path, method: :get) do %>
-      <%= select_tag :category, categories_list(@category), include_blank: 'All', class: 'form-select' %>     
+      <%= select_tag :category_id, categories_list(@category_id), include_blank: 'All', class: 'form-select' %>     
       <%= submit_tag 'Filter', class: 'btn btn-sm btn-primary mt-3' %>
     <% end %>
   </div>

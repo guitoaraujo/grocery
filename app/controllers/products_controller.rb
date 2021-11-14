@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
 
   def index
-    @category = params[:category]
-    if @category.present?
-      @products = Product.where(category: @category)
+    @category_id = params[:category_id]
+    if @category_id.present?
+      @products = Product.where(category_id: @category_id)
     else
       @products = Product.all
     end
