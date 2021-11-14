@@ -1,0 +1,23 @@
+AllCops:
+  NewCops: enable
+
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 170
+  
+Lint/MissingSuper:
+  Exclude:
+    - 'app/services/**/*'
+Metrics/BlockLength:
+  Max: 50
+  
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/PerceivedComplexity:
+  Max: 10

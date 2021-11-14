@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CartsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_cart, except: :index
@@ -16,8 +18,7 @@ class CartsController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
   def delete_products
     @cart.cart_products.where(product_id: params[:products_to_delete]).delete_all

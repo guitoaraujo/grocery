@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :products do
   desc 'Creates products'
   task create: :environment do

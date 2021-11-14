@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Cart, type: :model do
@@ -11,7 +13,7 @@ RSpec.describe Cart, type: :model do
     let!(:product2) { create(:product, price: 4000, category_id: category.id) }
     let!(:cart_product1) { create(:cart_product, cart_id: cart.id, product_id: product1.id) }
     let!(:cart_product2) { create(:cart_product, cart_id: cart.id, product_id: product2.id) }
-    
+
     it 'calculates total price' do
       subject
       expect(cart.total_price).to eq(5000)
