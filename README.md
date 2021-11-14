@@ -1,24 +1,28 @@
-# README
+## Welcome
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This **rails** app is a challenge code!. 
+The main goal here is provide a simple e-commerce page with some payment gateway(**TEST environment**).
 
-Things you may want to cover:
+### Requirements 
+* Ruby 3.0.1
+* Rails 6.1.4.1
 
-* Ruby version
+### Setup
+> bundle
 
-* System dependencies
+> rails db:create db:migrate
 
-* Configuration
+> rails products:create
 
-* Database creation
+### Tests
+For tests you may use the command below:
+> rspec
 
-* Database initialization
+### TODO
+* improve test cases
+* find a way to hide stripe keys
+* improve task to create products
+* implement a feedback message or page so users can understand what is going on after chekcout. 
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+by [Igor Silva](https://github.com/guitoaraujo)
