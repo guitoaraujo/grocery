@@ -17,7 +17,6 @@ class CheckoutController < ApplicationController
   private
 
   def line_items
-    
     products = Product.where(id: params[:products])
     products.map do |product|
       {
