@@ -1,3 +1,3 @@
 # frozen_string_literal: true
 
-Stripe.api_key = Rails.application.credentials[:stripe][:secret]
+Stripe.api_key = 'sk_test_51JvNnsAD3NTK3sN5z5pBgT5XPJRExEAknhCnIpoKvOqnXrCy6zlo8G5DFnDHApHIi70X6uPJacyLKOLLZFetfxNY00c2HobG6w'

@@ -1,4 +1,4 @@
-var stripe = Stripe('<%= Rails.application.credentials[:stripe][:public] %>')
+var stripe = Stripe('sk_test_51JvNnsAD3NTK3sN5z5pBgT5XPJRExEAknhCnIpoKvOqnXrCy6zlo8G5DFnDHApHIi70X6uPJacyLKOLLZFetfxNY00c2HobG6w')
 
 stripe.redirectToCheckout(
   {
